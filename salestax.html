@@ -36,24 +36,33 @@
         </section>
     </body>
     <script type="text/javascript">
-        
+
         function calculate(){
-            
+          const doc= document;
+
+
         //Query select your information
-        let price;
-        let shippingType;
-        let shippingLocation;
-        
-        //conditionally choose the shipping tax    
+        let price= doc.querySelector('options');
+        let shippingType= doc.querySelector('options');
+        let shippingLocation= doc.querySelector('options');;
+
+        //conditionally choose the shipping tax
         let shippingTax;
         let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
-        
+        //Illinois Tax Rate: 6.25%
+        //-  Minimum Shipping Rate: 7.50%
+        //-  Maximum Shipping Rate: 10.25%
+        function calculate(){
+          
+        }
+
         if(tax10000.includes(shippingLocation)){
             //think about it
         }
-            
-            
-            
+        else(){}
+        let answer =doc.querySelector('#answer')
+        answer.innerHTML=
+
         }
     </script>
 </html>
