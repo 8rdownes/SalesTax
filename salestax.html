@@ -46,15 +46,26 @@
 
         //Query select your information
         let price= doc.querySelector('#price');
-        let shippingType= doc.querySelector('#shipping');
-        let shippingLocation= doc.querySelector('#shippingLocation');
-        let cost= Number(imput.value);
+        let shippingType= doc.querySelector('#shipping').value;
+        let shippingLocation= doc.querySelector('#shippingLocation').value;
+        price= Number(price.value);
 
-        if (shippingType)
+
+        if (shippingType = 'standard'){
+            shippingType= 2.99;
+        }
+
+        if (shippingType = 'priority'){
+          shippingType = 4.99;
+        }
+        if (shippingType = 'express'){
+          shippingType = 8.99;
+
+        }
 
         //conditionally choose the shipping tax
         //Illinois Tax Rate: 6.25%
-        let shippingTax;
+
         let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
         let tax10250 = ['Chicago','Elgin','Cicero','Skokie'];
         let tax9000 = ['Champaign'];
@@ -68,31 +79,38 @@
 
 
         if(tax10000.includes(shippingLocation)){
-            price= price*tax10000;
+            shippingTax=1.10;
         }
         if(tax10250.includes(shippingLocation)){
+              shippingTax=1.1025;
         }
 
         if(tax9000.includes(shippingLocation)){
+            shippingTax=1.09;
         }
 
         if(tax9250.includes(shippingLocation)){
+            shippingTax=1.0925;
         }
 
         if(tax9750.includes(shippingLocation)){
+          shippingTax=1.0975;
         }
 
         if(tax8750.includes(shippingLocation)){
+          shippingTax=1.0875;
         }
 
         if(tax8250.includes(shippingLocation)){
+          shippingTax=1.0825;
         }
 
         if(tax7500.includes(shippingLocation)){
+          shippingTax=1.075;
         }
 
         let answer =doc.querySelector('#answer')
-        answer.innerHTML=
+        answer.innerHTML=price + shippingType +shippingTax;
 
         }
     </script>
